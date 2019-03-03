@@ -6,13 +6,13 @@
 
 {{ define "main" }}
 
-<div class="intro pb-4">
+<div class="intro pb-2">
   <div class="container">
     {{ .Content }}
   </div>
 </div>
-
-<div class="container pt-2">
+<!--
+<div class="container pt-2 pb-4">
   <div class="call">
     <div class="call-box-top">
       <div class="call-phone"><strong>Phone: </strong> {{ .Site.Data.contact.phone }} </div>
@@ -27,35 +27,23 @@
     </div>
   </div>
 </div>
-
-{{ $services := where (where .Site.RegularPages "Type" "services") ".Params.featured" true }}
-{{if gt (len $services) 0}}
-<div class="container pt-8 pt-md-12 pb-md-12">
-  <div class="row justify-content-start">
-    <div class="col-12">
-      <h2 class="mb-3">Services</h2>
-    </div>
-    {{ $services := where (where .Site.RegularPages "Type" "services") ".Params.featured" true }}
-    {{ range first 6 (sort $services ".Params.weight") }}
-    <div class="col-12 col-md-4 mb-1">
-      {{ .Render "summary" }}
-    </div>
-    {{ end }}
-    <div class="col-12 text-center">
-      <a class="button button-primary" href="{{ .Site.BaseURL }}services">View All Services</a>
-    </div>
-  </div>
-</div>
-{{end}}
-
+-->
 <div class="strip strip-grey">
 <div class="container pt-5 pb-5 pt-md-8 pb-md-8">
   <div class="row justify-content-center">
     <div class="col-12">
-      <h2 class="text-center text-dark mb-3">Features</h2>
+      <!-- Features -->
+
+    <div class="col-12 text-center">
+      <a class="button button-primary" href="{{ .Site.BaseURL}}contact">Contact us for a free consultation | 免费咨询</a>
+    </div>
+ 
+    <h2 class="text-center text-dark mb-3"></h2>
+
     </div>
     {{ range .Site.Data.features }}
-    <div class="col-12 col-md-6 col-lg-4 mb-2">
+    <!--<div class="col-12 col-md-6 col-lg-4 mb-2">-->
+    <div class="col-12 col-md-12 col-lg-12 mb-2">
       <div class="feature">
         {{ if .image }}<div class="feature-image"><img alt="{{ .title }} logo" src="{{ .image }}" /></div> {{ end }}
         <h2 class="feature-title">{{ .title }}</h2>
@@ -64,8 +52,31 @@
     </div>
     {{end}}
   </div>
+
+
 </div>
 </div>
+
+{{ $programs := where (where .Site.RegularPages "Type" "programs") ".Params.featured" true }}
+{{if gt (len $programs) 0}}
+<div class="container pt-8 pt-md-12 pb-md-12">
+  <div class="row justify-content-start">
+    <div class="col-12">
+      <h2 class="mb-3">Programs</h2>
+    </div>
+    {{ $programs := where (where .Site.RegularPages "Type" "programs") ".Params.featured" true }}
+    {{ range first 6 (sort $programs ".Params.weight") }}
+    <div class="col-12 col-md-4 mb-1">
+      {{ .Render "summary" }}
+    </div>
+    {{ end }}
+    <div class="col-12 text-center">
+      <a class="button button-primary" href="{{ .Site.BaseURL }}programs">View All programs</a>
+    </div>
+  </div>
+</div>
+{{end}}
+
 {{ end }}
 
 {{ define "footer_js" }}
