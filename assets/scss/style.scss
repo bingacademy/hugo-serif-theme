@@ -68,12 +68,12 @@ url('https://fonts.googleapis.com/css?family=Lora:400,700|Open+Sans:300,400,700|
 @import 'pages/team/team-summary';
 @import 'pages/testimonials/page-testimonials-list';
 @import 'pages/testimonials/testimonials-summary';
-@import 'pages/services/page-services-list';
-@import 'pages/services/page-services-single';
-@import 'pages/services/service-summary';
+@import 'pages/programs/page-services-list';
+@import 'pages/programs/page-services-single';
+@import 'pages/programs/service-summary';
 
 body {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-family: $font-family-base;
   // -webkit-font-smoothing: antialiased;
   // -moz-osx-font-smoothing: grayscale;
