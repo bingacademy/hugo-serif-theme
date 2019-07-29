@@ -27,11 +27,11 @@
     }
     @include media-breakpoint-up(md) {
       font-size: 3rem;
-      width: 50%;
+      width: 60%;
     }
     @include media-breakpoint-up(lg) {
       font-size: 3rem;
-      width: 50%;
+      width: 60%;
     }
   }
   p {
@@ -47,10 +47,10 @@
       width: 60%;
     }
     @include media-breakpoint-up(lg) {
-      width: 50%;
+      width: 60%;
     }
     @include media-breakpoint-up(xl) {
-      width: 50%;
+      width: 60%;
     }
   }
 }
